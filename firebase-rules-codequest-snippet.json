@@ -1,7 +1,7 @@
 {
   "codequest_rankings": {
     "$mode": {
-      ".read": "query.orderByChild === 'score' && query.limitToLast === 10",
+      ".read": "query.orderByChild === 'score' && (query.limitToLast === 10 || (query.startAt !== null && query.startAt >= 1 && query.startAt <= 9001))",
       ".indexOn": ["score"],
       "$attempt": {
         ".write": "!data.exists() && newData.exists()",

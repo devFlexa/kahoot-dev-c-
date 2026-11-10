@@ -1,0 +1,18 @@
+# Arquivos gerados para empacotamento e publicação local
+/sites/
+/codequest-publicacao.zip
+/*.tar.gz
+
+# Arquivos temporários e caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+codequest_syntax_check.js
+site-workflow-debug.mjs
+.DS_Store
+Thumbs.db
+
+# Configuração local
+.env
+.env.*
+!.env.example

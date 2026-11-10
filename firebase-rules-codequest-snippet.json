@@ -1,0 +1,12 @@
+{
+  "codequest_rankings": {
+    "$mode": {
+      ".read": "query.orderByChild === 'score' && query.limitToLast === 10",
+      ".indexOn": ["score"],
+      "$attempt": {
+        ".write": "!data.exists() && newData.exists()",
+        ".validate": "newData.hasChildren(['name', 'score', 'hits', 'total', 'createdAt']) && newData.child('name').isString() && newData.child('name').val().length > 0 && newData.child('name').val().length <= 40 && newData.child('score').isNumber() && newData.child('hits').isNumber() && newData.child('total').isNumber() && newData.child('createdAt').isNumber() && newData.child('total').val() >= 1 && newData.child('total').val() <= 90 && newData.child('hits').val() >= 0 && newData.child('hits').val() <= newData.child('total').val() && newData.child('score').val() === newData.child('hits').val() * 100"
+      }
+    }
+  }
+}
